@@ -44,7 +44,7 @@ export const restaurants: Restaurant[] = [
         name: 'Temaki Salmão',
         description: 'Cone crocante recheado com salmão fresco e cream cheese.',
         image:
-          'https://images.unsplash.com/photo-1563612116625-3012372fcc40?w=400&q=80',
+          'https://images.unsplash.com/photo-1758779527927-56c21385ffce?w=400&q=80',
       },
       {
         id: 'p1-3',
@@ -90,7 +90,7 @@ export const restaurants: Restaurant[] = [
         name: 'Risotto de Funghi',
         description: 'Arroz arbório com cogumelos porcini e trufa negra.',
         image:
-          'https://images.unsplash.com/photo-1476124369491-e7add44e31fc?w=400&q=80',
+          'https://images.unsplash.com/photo-1609770424775-39ec362f2d94?w=400&q=80',
       },
     ],
   },
