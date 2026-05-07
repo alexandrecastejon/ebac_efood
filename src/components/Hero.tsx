@@ -2,26 +2,27 @@ import styled from 'styled-components'
 import { theme } from '../styles/theme'
 
 const HeroSection = styled.section`
-  margin-top: 64px;
-  margin-bottom: 56px;
-  padding: 48px 24px 56px;
+  margin-top: ${theme.spacing.heroMarginTop};
+  margin-bottom: ${theme.spacing.heroMarginBottom};
+  padding: ${theme.spacing.heroPaddingY} ${theme.spacing.heroPaddingX};
   text-align: center;
   background-color: ${theme.colors.bg};
   background-image: repeating-linear-gradient(
     90deg,
     transparent,
-    transparent 12px,
-    rgba(230, 103, 103, 0.08) 12px,
-    rgba(230, 103, 103, 0.08) 13px
+    transparent 10px,
+    ${theme.colors.heroStripe} 10px,
+    ${theme.colors.heroStripe} 11px
   );
 `
 
 const Title = styled.h1`
   margin: 0 auto;
-  max-width: 540px;
-  font-size: clamp(28px, 5vw, 36px);
-  font-weight: 700;
-  line-height: 1.25;
+  max-width: ${theme.spacing.heroTitleMaxWidth};
+  font-family: ${theme.font.family};
+  font-size: ${theme.typography.heroTitle.fontSize};
+  font-weight: ${theme.typography.heroTitle.fontWeight};
+  line-height: ${theme.typography.heroTitle.lineHeight};
   color: ${theme.colors.primary};
 `
 

@@ -8,65 +8,86 @@ const Card = styled.article`
   background-color: ${theme.colors.primary};
   color: ${theme.colors.peach};
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 `
 
 const ImageWrap = styled.div`
   position: relative;
+  flex-shrink: 0;
 `
 
 const CardImage = styled.img`
   width: 100%;
-  height: 217px;
+  height: ${theme.sizes.restaurantCardImageHeight};
   object-fit: cover;
 `
 
 const TagsOverlay = styled.div`
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: ${theme.spacing.tagOffsetY};
+  right: ${theme.spacing.tagOffsetX};
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 8px;
+  gap: ${theme.spacing.tagGap};
 `
 
 const Body = styled.div`
-  padding: 8px;
+  padding: ${theme.spacing.cardPaddingRestaurant};
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 `
 
 const TitleRow = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
+  align-items: flex-start;
+  gap: ${theme.spacing.sm};
+  margin-bottom: ${theme.spacing.sm};
 `
 
 const Title = styled.h2`
   margin: 0;
-  font-size: 18px;
-  font-weight: 700;
+  flex: 1;
+  min-width: 0;
+  font-family: ${theme.font.family};
+  font-size: ${theme.typography.restaurantCardTitle.fontSize};
+  font-weight: ${theme.typography.restaurantCardTitle.fontWeight};
+  line-height: ${theme.typography.restaurantCardTitle.lineHeight};
 `
 
 const Rating = styled.span`
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-weight: 700;
-  font-size: 18px;
+  gap: ${theme.spacing.tagGap};
+  flex-shrink: 0;
+  font-family: ${theme.font.family};
+  font-weight: ${theme.typography.rating.fontWeight};
+  font-size: ${theme.typography.rating.fontSize};
+  line-height: ${theme.typography.rating.lineHeight};
 `
 
 const Star = styled.span`
   color: ${theme.colors.star};
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1;
 `
 
 const Description = styled.p`
-  margin: 0 0 16px;
-  font-size: 14px;
-  line-height: 1.375;
-  min-height: 88px;
+  margin: 0 0 ${theme.spacing.sm};
+  flex: 1;
+  font-family: ${theme.font.family};
+  font-size: ${theme.typography.restaurantCardBody.fontSize};
+  font-weight: ${theme.typography.restaurantCardBody.fontWeight};
+  line-height: ${theme.typography.restaurantCardBody.lineHeight};
+`
+
+const CardActions = styled.div`
+  margin-top: auto;
+  align-self: flex-start;
 `
 
 type RestaurantCardProps = {
@@ -93,9 +114,11 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
           </Rating>
         </TitleRow>
         <Description>{restaurant.description}</Description>
-        <ButtonLink to={`/restaurante/${restaurant.id}`} $variant="primary">
-          Saiba mais
-        </ButtonLink>
+        <CardActions>
+          <ButtonLink to={`/restaurante/${restaurant.id}`} $variant="primary">
+            Saiba mais
+          </ButtonLink>
+        </CardActions>
       </Body>
     </Card>
   )

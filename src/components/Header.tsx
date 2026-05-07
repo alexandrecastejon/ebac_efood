@@ -7,14 +7,19 @@ import { Logo } from './Logo'
 type HeaderVariant = 'home' | 'restaurant'
 
 const Bar = styled.header<{ $variant: HeaderVariant }>`
-  padding: ${({ $variant }) => ($variant === 'home' ? '40px 0 0' : '24px 0')};
+  padding-top: ${({ $variant }) =>
+    $variant === 'home'
+      ? theme.spacing.headerHomePaddingTop
+      : theme.spacing.headerRestaurantPaddingY};
+  padding-bottom: ${({ $variant }) =>
+    $variant === 'home' ? '0' : theme.spacing.headerRestaurantPaddingY};
 `
 
 const RestaurantBarInner = styled(Container)`
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 16px;
+  gap: ${theme.spacing.sm};
 `
 
 const NavLeft = styled.div`
@@ -27,15 +32,21 @@ const NavCenter = styled.div`
 
 const NavRight = styled.div`
   justify-self: end;
-  font-weight: 700;
-  font-size: 14px;
+  max-width: 200px;
+  text-align: right;
+  font-family: ${theme.font.family};
+  font-weight: ${theme.typography.cart.fontWeight};
+  font-size: ${theme.typography.cart.fontSize};
+  line-height: ${theme.typography.cart.lineHeight};
   color: ${theme.colors.primary};
 `
 
 const StyledNavLink = styled(Link)`
   text-decoration: none;
-  font-weight: 700;
-  font-size: 18px;
+  font-family: ${theme.font.family};
+  font-weight: ${theme.typography.navLink.fontWeight};
+  font-size: ${theme.typography.navLink.fontSize};
+  line-height: ${theme.typography.navLink.lineHeight};
   color: ${theme.colors.primary};
 
   &:hover {
@@ -43,7 +54,7 @@ const StyledNavLink = styled(Link)`
   }
 `
 
-const HomeLogoWrap = styled.div`
+const HomeLogoRow = styled(Container)`
   display: flex;
   justify-content: center;
 `
@@ -56,9 +67,9 @@ export function Header({ variant }: HeaderProps) {
   if (variant === 'home') {
     return (
       <Bar $variant="home">
-        <HomeLogoWrap>
+        <HomeLogoRow>
           <Logo to="/" />
-        </HomeLogoWrap>
+        </HomeLogoRow>
       </Bar>
     )
   }

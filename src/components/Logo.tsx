@@ -3,14 +3,24 @@ import { Link } from 'react-router-dom'
 import { theme } from '../styles/theme'
 
 const LogoText = styled.span`
-  font-weight: 700;
-  font-size: 36px;
+  font-family: ${theme.font.family};
+  font-weight: ${theme.typography.logo.fontWeight};
+  font-size: ${theme.typography.logo.fontSize};
+  letter-spacing: ${theme.typography.logo.letterSpacing};
   color: ${theme.colors.primary};
-  letter-spacing: -0.5px;
 `
 
 const StyledLogoLink = styled(Link)`
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+`
+
+const LogoPlain = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 `
 
 type LogoProps = {
@@ -30,5 +40,5 @@ export function Logo({ to, className }: LogoProps) {
     )
   }
 
-  return <span className={className}>{content}</span>
+  return <LogoPlain className={className}>{content}</LogoPlain>
 }

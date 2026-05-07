@@ -4,45 +4,54 @@ import { Logo } from './Logo'
 
 const FooterWrap = styled.footer`
   margin-top: auto;
-  padding: 40px 16px 32px;
+  padding: ${theme.spacing.footerPaddingTop} ${theme.spacing.containerPaddingX}
+    ${theme.spacing.footerPaddingBottom};
   background-color: ${theme.colors.peach};
   text-align: center;
+`
+
+const LogoBlock = styled.div`
+  margin-bottom: ${theme.spacing.footerLogoToSocial};
 `
 
 const SocialRow = styled.div`
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin: 32px 0 80px;
+  align-items: center;
+  gap: ${theme.spacing.tagGap};
+  margin-bottom: ${theme.spacing.footerSocialToDisclaimer};
 `
 
 const SocialLink = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: ${theme.sizes.socialIconCircle};
+  height: ${theme.sizes.socialIconCircle};
   border-radius: 50%;
   background-color: ${theme.colors.primary};
   color: ${theme.colors.peach};
   text-decoration: none;
+  flex-shrink: 0;
 
   &:hover {
     opacity: 0.9;
   }
 
   svg {
-    width: 14px;
-    height: 14px;
+    width: ${theme.sizes.socialIconGlyph};
+    height: ${theme.sizes.socialIconGlyph};
     fill: currentColor;
   }
 `
 
 const Disclaimer = styled.p`
   margin: 0 auto;
-  max-width: 480px;
-  font-size: 10px;
-  line-height: 1.5;
+  max-width: ${theme.sizes.disclaimerMaxWidth};
+  font-family: ${theme.font.family};
+  font-size: ${theme.typography.footerDisclaimer.fontSize};
+  font-weight: ${theme.typography.footerDisclaimer.fontWeight};
+  line-height: ${theme.typography.footerDisclaimer.lineHeight};
   color: ${theme.colors.footerText};
 `
 
@@ -73,7 +82,9 @@ function TwitterIcon() {
 export function Footer() {
   return (
     <FooterWrap>
-      <Logo />
+      <LogoBlock>
+        <Logo />
+      </LogoBlock>
       <SocialRow>
         <SocialLink href="#" aria-label="Instagram">
           <InstagramIcon />

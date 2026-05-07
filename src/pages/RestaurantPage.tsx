@@ -6,6 +6,7 @@ import { Container } from '../components/Container'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { ProductCard } from '../components/ProductCard'
+import { theme } from '../styles/theme'
 
 const Page = styled.div`
   display: flex;
@@ -15,12 +16,13 @@ const Page = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  padding: 56px 0 120px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: ${theme.spacing.gridGapRestaurant};
+  padding-top: ${theme.spacing.restaurantSectionPaddingTop};
+  padding-bottom: ${theme.spacing.sectionPaddingBottom};
 
   @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   @media (max-width: 560px) {
@@ -29,16 +31,20 @@ const Grid = styled.div`
 `
 
 const NotFoundBox = styled(Container)`
-  padding: 80px 16px 120px;
+  padding: ${theme.spacing.xl} ${theme.spacing.containerPaddingX}
+    ${theme.spacing.sectionPaddingBottom};
   text-align: center;
 `
 
 const NotFoundTitle = styled.h1`
-  margin: 0 0 16px;
+  margin: 0 0 ${theme.spacing.sm};
+  font-family: ${theme.font.family};
   font-size: 24px;
+  font-weight: 700;
 `
 
 const BackLink = styled(Link)`
+  font-family: ${theme.font.family};
   font-weight: 700;
   color: inherit;
 `

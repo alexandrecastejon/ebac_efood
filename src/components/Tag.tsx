@@ -5,12 +5,10 @@ export const Tag = styled.span`
   display: inline-block;
   background-color: ${theme.colors.primary};
   color: ${theme.colors.textOnDark};
-  font-size: 12px;
-  font-weight: 700;
-  padding: 4px 8px;
-  margin-left: 8px;
-
-  &:first-child {
-    margin-left: 0;
-  }
+  font-family: ${theme.font.family};
+  font-size: ${theme.typography.tag.fontSize};
+  font-weight: ${theme.typography.tag.fontWeight};
+  line-height: ${theme.typography.tag.lineHeight};
+  padding: ${theme.spacing.xs};
+  border-radius: ${theme.radii.tag};
 `

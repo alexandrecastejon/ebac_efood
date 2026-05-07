@@ -5,5 +5,5 @@ export const Container = styled.div`
   width: 100%;
   max-width: ${theme.layout.maxWidth};
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 ${theme.spacing.containerPaddingX};
 `
