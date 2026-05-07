@@ -29,8 +29,9 @@ const SocialLink = styled.a`
   width: ${theme.sizes.socialIconCircle};
   height: ${theme.sizes.socialIconCircle};
   border-radius: 50%;
-  background-color: ${theme.colors.primary};
-  color: ${theme.colors.peach};
+  background-color: transparent;
+  border: 1px solid ${theme.colors.primary};
+  color: ${theme.colors.primary};
   text-decoration: none;
   flex-shrink: 0;
 

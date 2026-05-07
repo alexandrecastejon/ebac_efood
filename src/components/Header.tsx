@@ -7,6 +7,17 @@ import { Logo } from './Logo'
 type HeaderVariant = 'home' | 'restaurant'
 
 const Bar = styled.header<{ $variant: HeaderVariant }>`
+  background-color: ${theme.colors.peach};
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 10px,
+    ${theme.colors.heroStripe} 10px,
+    ${theme.colors.heroStripe} 11px
+  );
+  height: ${theme.spacing.headerHeight};
+  display: flex;
+  align-items: center;
   padding-top: ${({ $variant }) =>
     $variant === 'home'
       ? theme.spacing.headerHomePaddingTop
@@ -32,7 +43,7 @@ const NavCenter = styled.div`
 
 const NavRight = styled.div`
   justify-self: end;
-  max-width: 200px;
+  max-width: 258px;
   text-align: right;
   font-family: ${theme.font.family};
   font-weight: ${theme.typography.cart.fontWeight};

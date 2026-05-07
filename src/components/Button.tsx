@@ -30,7 +30,7 @@ const buttonStyles = css<{ $variant?: Variant }>`
           font-weight: ${theme.typography.buttonPrimary.fontWeight};
           line-height: ${theme.typography.buttonPrimary.lineHeight};
           padding: ${theme.spacing.xs} ${theme.spacing.sm};
-          min-height: 32px;
+          min-height: 24px;
         `
       : css`
           background-color: ${theme.colors.peach};
@@ -39,8 +39,8 @@ const buttonStyles = css<{ $variant?: Variant }>`
           font-weight: ${theme.typography.buttonSecondary.fontWeight};
           line-height: ${theme.typography.buttonSecondary.lineHeight};
           width: 100%;
-          padding: ${theme.spacing.sm} ${theme.spacing.sm};
-          min-height: 40px;
+          padding: 0;
+          height: ${theme.sizes.productButtonHeight};
         `}
 `
 

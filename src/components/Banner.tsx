@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import { theme } from '../styles/theme'
+import { Container } from './Container'
 
 const BannerWrap = styled.section<{ $image: string }>`
   position: relative;
-  min-height: ${theme.sizes.bannerMinHeight};
+  height: ${theme.sizes.bannerMinHeight};
   background-image: linear-gradient(
       ${theme.colors.overlay},
       ${theme.colors.overlay}
@@ -13,19 +14,16 @@ const BannerWrap = styled.section<{ $image: string }>`
   background-position: center;
   display: flex;
   flex-direction: column;
-  padding: ${theme.spacing.md} ${theme.spacing.containerPaddingX}
-    ${theme.spacing.lg};
 `
 
-const Inner = styled.div`
-  width: 100%;
-  max-width: ${theme.layout.maxWidth};
-  margin: 0 auto;
+const Inner = styled(Container)`
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  padding-top: ${theme.spacing.lg};
+  padding-bottom: ${theme.spacing.lg};
 `
 
 const Category = styled.span`

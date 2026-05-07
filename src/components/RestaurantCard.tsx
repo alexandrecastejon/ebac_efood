@@ -5,12 +5,14 @@ import { ButtonLink } from './Button'
 import { Tag } from './Tag'
 
 const Card = styled.article`
-  background-color: ${theme.colors.primary};
-  color: ${theme.colors.peach};
+  background-color: ${theme.colors.white};
+  color: ${theme.colors.primary};
   overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
+  border: 1px solid ${theme.colors.primary};
+  max-width: ${theme.sizes.restaurantCardWidth};
 `
 
 const ImageWrap = styled.div`
@@ -39,6 +41,7 @@ const Body = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  background-color: ${theme.colors.white};
 `
 
 const TitleRow = styled.div`
@@ -83,6 +86,7 @@ const Description = styled.p`
   font-size: ${theme.typography.restaurantCardBody.fontSize};
   font-weight: ${theme.typography.restaurantCardBody.fontWeight};
   line-height: ${theme.typography.restaurantCardBody.lineHeight};
+  color: ${theme.colors.primary};
 `
 
 const CardActions = styled.div`
@@ -109,8 +113,8 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
         <TitleRow>
           <Title>{restaurant.name}</Title>
           <Rating>
-            <Star aria-hidden>★</Star>
             {restaurant.rating.toFixed(1)}
+            <Star aria-hidden>★</Star>
           </Rating>
         </TitleRow>
         <Description>{restaurant.description}</Description>

@@ -6,14 +6,17 @@ import { Button } from './Button'
 const Card = styled.article`
   background-color: ${theme.colors.primary};
   padding: ${theme.spacing.cardPaddingProduct};
+  width: ${theme.sizes.productCardWidth};
+  height: ${theme.sizes.productCardHeight};
+  border: 1px solid ${theme.colors.primary};
   display: flex;
   flex-direction: column;
-  height: 100%;
+  box-sizing: border-box;
 `
 
 const ProductImage = styled.img`
-  width: 100%;
-  aspect-ratio: ${theme.sizes.productImageAspectRatio};
+  width: ${theme.sizes.productInnerWidth};
+  height: ${theme.sizes.productImageHeight};
   object-fit: cover;
   margin-bottom: ${theme.spacing.tagGap};
   flex-shrink: 0;
