@@ -25,19 +25,15 @@ export const theme = {
       letterSpacing: '-0.5px',
     },
     heroTitle: {
-      fontSize: '32px',
+      fontSize: '36px',
       fontWeight: 900,
-      lineHeight: '37px',
+      lineHeight: '42px',
     },
-    navLink: {
+    headerSideText: {
       fontSize: '18px',
       fontWeight: 900,
       lineHeight: 1,
-    },
-    cart: {
-      fontSize: '18px',
-      fontWeight: 900,
-      lineHeight: 1,
+      letterSpacing: '0',
     },
     restaurantCardTitle: {
       fontSize: '18px',
@@ -72,7 +68,7 @@ export const theme = {
     footerDisclaimer: {
       fontSize: '10px',
       fontWeight: 400,
-      lineHeight: 1.5,
+      lineHeight: 1,
     },
     buttonPrimary: {
       fontSize: '14px',
@@ -142,6 +138,10 @@ export const theme = {
     productInnerWidth: '304px',
     productButtonHeight: '24px',
     disclaimerMaxWidth: '480px',
+    footerMinHeight: '298px',
+    logoImgWidth: '125px',
+    logoImgHeight: '57.5px',
+    headerCartMaxWidth: '256px',
     restaurantCardWidth: '472px',
     restaurantCardHeight: '398px',
   },

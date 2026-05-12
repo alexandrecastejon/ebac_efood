@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { restaurants } from '../data/restaurants'
 import { Container } from '../components/Container'
 import { Footer } from '../components/Footer'
-import { Header } from '../components/Header'
 import { Hero } from '../components/Hero'
 import { RestaurantCard } from '../components/RestaurantCard'
 import { theme } from '../styles/theme'
@@ -30,7 +29,6 @@ const Grid = styled.div`
 export function HomePage() {
   return (
     <Page>
-      <Header variant="home" />
       <Hero />
       <Container>
         <Grid>
