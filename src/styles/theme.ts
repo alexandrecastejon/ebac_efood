@@ -134,7 +134,7 @@ export const theme = {
     socialIconGlyph: '14px',
     productImageAspectRatio: '1 / 1',
     productCardWidth: '320px',
-    productCardHeight: '338px',
+    productCardMinHeight: '338px',
     productImageHeight: '167px',
     productInnerWidth: '304px',
     productButtonHeight: '24px',

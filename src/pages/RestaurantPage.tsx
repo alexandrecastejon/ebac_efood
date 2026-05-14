@@ -26,6 +26,7 @@ const Page = styled.div`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
   gap: ${theme.spacing.gridGapRestaurant};
   padding-top: ${theme.spacing.restaurantSectionPaddingTop};
   padding-bottom: ${theme.spacing.sectionPaddingBottom};
@@ -37,6 +38,13 @@ const Grid = styled.div`
   @media (max-width: 560px) {
     grid-template-columns: 1fr;
   }
+`
+
+const ProductCell = styled.div`
+  display: flex;
+  min-height: 0;
+  height: 100%;
+  justify-content: center;
 `
 
 const NotFoundBox = styled(Container)`
@@ -161,7 +169,12 @@ export function RestaurantPage() {
       <Container>
         <Grid>
           {products.map((p) => (
-            <ProductCard key={p.id} product={p} onAddClick={() => handleOpenProduct(p)} />
+            <ProductCell key={p.id}>
+              <ProductCard
+                product={p}
+                onMoreDetails={() => handleOpenProduct(p)}
+              />
+            </ProductCell>
           ))}
         </Grid>
       </Container>
