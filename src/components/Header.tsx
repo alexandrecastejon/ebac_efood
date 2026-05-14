@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { useCart } from '../hooks/useCart'
 import { theme } from '../styles/theme'
 import fundo from '../assets/backgrounds/fundo.png'
 import logoImg from '../assets/logos/logo.png'
@@ -102,6 +103,12 @@ type HeaderProps = {
   variant: HeaderVariant
 }
 
+function cartSummaryLabel(count: number): string {
+  if (count === 0) return '0 produtos no carrinho'
+  if (count === 1) return '1 produto no carrinho'
+  return `${count} produtos no carrinho`
+}
+
 export function Header({ variant }: HeaderProps) {
   if (variant === 'home') {
     return (
@@ -112,6 +119,12 @@ export function Header({ variant }: HeaderProps) {
       </Bar>
     )
   }
+
+  return <RestaurantHeaderBar />
+}
+
+function RestaurantHeaderBar() {
+  const { itemCount } = useCart()
 
   return (
     <Bar $variant="restaurant">
@@ -124,7 +137,7 @@ export function Header({ variant }: HeaderProps) {
             <LogoImg src={logoImg} alt="efood" />
           </LogoLink>
         </NavCenter>
-        <NavRight>0 produto(s) no carrinho</NavRight>
+        <NavRight>{cartSummaryLabel(itemCount)}</NavRight>
       </RestaurantBarInner>
     </Bar>
   )

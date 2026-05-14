@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { theme } from '../styles/theme'
-import type { Product } from '../data/restaurants'
+import type { MenuProduct } from '../types/restaurant'
 import { Button } from './Button'
 
 const Card = styled.article`
@@ -46,17 +46,18 @@ const CardActions = styled.div`
 `
 
 type ProductCardProps = {
-  product: Product
+  product: MenuProduct
+  onAddClick: () => void
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, onAddClick }: ProductCardProps) {
   return (
     <Card>
       <ProductImage src={product.image} alt={product.name} />
       <Title>{product.name}</Title>
       <Description>{product.description}</Description>
       <CardActions>
-        <Button type="button" $variant="secondary">
+        <Button type="button" $variant="secondary" onClick={onAddClick}>
           Adicionar ao carrinho
         </Button>
       </CardActions>

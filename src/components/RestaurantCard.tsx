@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { theme } from '../styles/theme'
-import type { Restaurant } from '../data/restaurants'
+import type { RestaurantListItem } from '../types/restaurant'
 import { ButtonLink } from './Button'
 import { Tag } from './Tag'
 
@@ -95,7 +95,7 @@ const CardActions = styled.div`
 `
 
 type RestaurantCardProps = {
-  restaurant: Restaurant
+  restaurant: RestaurantListItem
 }
 
 export function RestaurantCard({ restaurant }: RestaurantCardProps) {
@@ -119,7 +119,7 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
         </TitleRow>
         <Description>{restaurant.description}</Description>
         <CardActions>
-          <ButtonLink to={`/restaurante/${restaurant.id}`} $variant="primary">
+          <ButtonLink to={`/restaurante/${String(restaurant.id)}`} $variant="primary">
             Saiba mais
           </ButtonLink>
         </CardActions>
