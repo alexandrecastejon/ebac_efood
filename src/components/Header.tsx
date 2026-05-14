@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { useCart } from '../hooks/useCart'
+import { openCart, selectCartItemCount } from '../store/cartSlice'
+import { useAppDispatch, useAppSelector } from '../store/hooks'
 import { theme } from '../styles/theme'
 import fundo from '../assets/backgrounds/fundo.png'
 import logoImg from '../assets/logos/logo.png'
@@ -52,7 +53,7 @@ const NavCenter = styled.div`
   justify-self: center;
 `
 
-const NavRight = styled.div`
+const NavRight = styled.button`
   justify-self: end;
   max-width: ${theme.sizes.headerCartMaxWidth};
   text-align: right;
@@ -63,6 +64,14 @@ const NavRight = styled.div`
   line-height: ${theme.typography.headerSideText.lineHeight};
   letter-spacing: ${theme.typography.headerSideText.letterSpacing};
   color: ${theme.colors.primary};
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 const StyledNavLink = styled(Link)`
@@ -124,7 +133,8 @@ export function Header({ variant }: HeaderProps) {
 }
 
 function RestaurantHeaderBar() {
-  const { itemCount } = useCart()
+  const dispatch = useAppDispatch()
+  const itemCount = useAppSelector(selectCartItemCount)
 
   return (
     <Bar $variant="restaurant">
@@ -137,7 +147,13 @@ function RestaurantHeaderBar() {
             <LogoImg src={logoImg} alt="efood" />
           </LogoLink>
         </NavCenter>
-        <NavRight>{cartSummaryLabel(itemCount)}</NavRight>
+        <NavRight
+          type="button"
+          aria-label="Abrir carrinho"
+          onClick={() => dispatch(openCart())}
+        >
+          {cartSummaryLabel(itemCount)}
+        </NavRight>
       </RestaurantBarInner>
     </Bar>
   )

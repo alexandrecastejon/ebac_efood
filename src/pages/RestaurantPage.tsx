@@ -7,7 +7,8 @@ import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { ProductCard } from '../components/ProductCard'
 import { ProductModal } from '../components/ProductModal'
-import { useCart } from '../hooks/useCart'
+import { addItem } from '../store/cartSlice'
+import { useAppDispatch } from '../store/hooks'
 import {
   fetchRestaurants,
   findRestaurantByRouteId,
@@ -81,7 +82,7 @@ function formatCategoryLabel(tipo: string): string {
 
 export function RestaurantPage() {
   const { id } = useParams<{ id: string }>()
-  const { addItem } = useCart()
+  const dispatch = useAppDispatch()
 
   const [apiList, setApiList] = useState<ApiRestaurant[] | null>(null)
   const [loadError, setLoadError] = useState<string | null>(null)
@@ -117,9 +118,12 @@ export function RestaurantPage() {
     setSelectedProduct(null)
   }, [])
 
-  const handleConfirmAdd = useCallback(() => {
-    addItem()
-  }, [addItem])
+  const handleConfirmAdd = useCallback(
+    (product: MenuProduct) => {
+      dispatch(addItem(product))
+    },
+    [dispatch],
+  )
 
   if (loadError) {
     return (

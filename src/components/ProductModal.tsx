@@ -145,7 +145,7 @@ type ProductModalProps = {
   isOpen: boolean
   product: MenuProduct | null
   onClose: () => void
-  onConfirmAdd: () => void
+  onConfirmAdd: (product: MenuProduct) => void
 }
 
 function CloseIcon() {
@@ -243,7 +243,7 @@ export function ProductModal({
           <AddButton
             type="button"
             onClick={() => {
-              onConfirmAdd()
+              onConfirmAdd(product)
               onClose()
             }}
           >
