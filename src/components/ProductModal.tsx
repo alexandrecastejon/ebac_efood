@@ -235,7 +235,7 @@ export function ProductModal({
         >
           <CloseIcon />
         </CloseButton>
-        <ProductImage src={product.image} alt="" />
+        <ProductImage src={product.image} alt={product.name} />
         <TextColumn>
           <Title id={titleId}>{product.name}</Title>
           <Description>{product.description}</Description>
