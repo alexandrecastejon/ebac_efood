@@ -91,6 +91,26 @@ export const theme = {
       fontWeight: 700,
       lineHeight: 1.33,
     },
+    cartItemTitle: {
+      fontSize: '18px',
+      fontWeight: 900,
+      lineHeight: '21px',
+    },
+    cartItemPrice: {
+      fontSize: '14px',
+      fontWeight: 400,
+      lineHeight: '22px',
+    },
+    cartTotal: {
+      fontSize: '14px',
+      fontWeight: 700,
+      lineHeight: '100%',
+    },
+    cartButton: {
+      fontSize: '14px',
+      fontWeight: 700,
+      lineHeight: '100%',
+    },
   },
   spacing: {
     xs: '8px',
@@ -122,6 +142,12 @@ export const theme = {
     tagGap: '8px',
     tagOffsetX: '16px',
     tagOffsetY: '16px',
+    cartSidebarPaddingX: '8px',
+    cartSidebarPaddingTop: '8px',
+    cartItemGap: '8px',
+    cartImageTextGap: '8px',
+    cartFooterGap: '8px',
+    cartFooterMarginTop: '30px',
   },
   radii: {
     button: '0px',
@@ -148,6 +174,13 @@ export const theme = {
     headerCartMaxWidth: '256px',
     restaurantCardWidth: '472px',
     restaurantCardHeight: '398px',
+    cartSidebarWidth: '360px',
+    cartContentWidth: '344px',
+    cartItemHeight: '100px',
+    cartThumbSize: '80px',
+    cartTrashSize: '16px',
+    cartButtonHeight: '24px',
+    cartTotalHeight: '16px',
   },
   layout: {
     maxWidth: '1024px',
