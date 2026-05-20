@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { openCart, selectCartItemCount } from '../store/cartSlice'
+import { setStep } from '../store/checkoutSlice'
 import { useAppDispatch, useAppSelector } from '../store/hooks'
 import { theme } from '../styles/theme'
 import fundo from '../assets/backgrounds/fundo.png'
@@ -150,7 +151,10 @@ function RestaurantHeaderBar() {
         <NavRight
           type="button"
           aria-label="Abrir carrinho"
-          onClick={() => dispatch(openCart())}
+          onClick={() => {
+            dispatch(setStep('cart'))
+            dispatch(openCart())
+          }}
         >
           {cartSummaryLabel(itemCount)}
         </NavRight>

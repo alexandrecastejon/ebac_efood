@@ -1,4 +1,3 @@
-/** Modelo de card na home (mapeado a partir da API). */
 export type RestaurantListItem = {
   id: number
   name: string
@@ -8,7 +7,6 @@ export type RestaurantListItem = {
   tags: string[]
 }
 
-/** Produto do cardápio na UI (perfil + modal). */
 export type MenuProduct = {
   id: number
   name: string

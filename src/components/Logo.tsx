@@ -24,7 +24,6 @@ const LogoPlain = styled.span`
 `
 
 type LogoProps = {
-  /** Quando omitido, exibe apenas o texto sem link (ex.: rodapé). */
   to?: string
   className?: string
 }

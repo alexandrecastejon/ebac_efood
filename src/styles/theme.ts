@@ -1,7 +1,3 @@
-/**
- * Tokens alinhados ao layout de referência efood (EBAC / Figma).
- * Ajuste fino pode ser feito comparando Inspect do Figma lado a lado com a página.
- */
 export const theme = {
   colors: {
     bg: '#FFF8F2',
@@ -111,6 +107,32 @@ export const theme = {
       fontWeight: 700,
       lineHeight: '100%',
     },
+    checkoutTitle: {
+      fontSize: '16px',
+      fontWeight: 700,
+      lineHeight: '100%',
+    },
+    checkoutLabel: {
+      fontSize: '14px',
+      fontWeight: 700,
+      lineHeight: '100%',
+    },
+    checkoutInput: {
+      fontSize: '14px',
+      fontWeight: 700,
+      lineHeight: '100%',
+    },
+    checkoutBody: {
+      fontSize: '14px',
+      fontWeight: 400,
+      lineHeight: '22px',
+      letterSpacing: '0',
+    },
+    checkoutButton: {
+      fontSize: '14px',
+      fontWeight: 700,
+      lineHeight: '100%',
+    },
   },
   spacing: {
     xs: '8px',
@@ -148,6 +170,16 @@ export const theme = {
     cartImageTextGap: '8px',
     cartFooterGap: '8px',
     cartFooterMarginTop: '30px',
+    checkoutFieldGap: '11px',
+    checkoutButtonGap: '8px',
+    checkoutTitleMarginTop: '24px',
+    checkoutTitleMarginBottom: '22px',
+    checkoutLabelInputGap: '9.35px',
+    checkoutActionsMarginTop: '24px',
+    checkoutBodyGap: '16px',
+    checkoutRowGap: '8px',
+    checkoutCepNumberGap: '35px',
+    checkoutCardCvvGap: '30px',
   },
   radii: {
     button: '0px',
@@ -176,11 +208,18 @@ export const theme = {
     restaurantCardHeight: '398px',
     cartSidebarWidth: '360px',
     cartContentWidth: '344px',
+    checkoutFormWidth: '344px',
     cartItemHeight: '100px',
     cartThumbSize: '80px',
     cartTrashSize: '16px',
     cartButtonHeight: '24px',
     cartTotalHeight: '16px',
+    checkoutInputHeight: '32px',
+    checkoutFieldWidth: '155px',
+    checkoutCardNumberWidth: '228px',
+    checkoutCvvWidth: '87px',
+    checkoutButtonHeight: '24px',
+    checkoutButtonWidth: '344px',
   },
   layout: {
     maxWidth: '1024px',

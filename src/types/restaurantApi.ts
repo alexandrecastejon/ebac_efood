@@ -1,5 +1,3 @@
-/** Resposta de https://api-ebac.vercel.app/api/efood/restaurantes */
-
 export type ApiMenuItem = {
   id: number
   nome: string
